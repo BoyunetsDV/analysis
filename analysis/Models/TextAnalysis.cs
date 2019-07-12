@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace analysis.Models
@@ -21,7 +22,7 @@ namespace analysis.Models
                     case "long":
                     case "frequentWord":
                     case "countSymbols":
-                        result = Text.LongCount().ToString();
+                        result = GetCountOfSymbols();
                         break;
                     case "countWords":
                     default:
@@ -34,6 +35,11 @@ namespace analysis.Models
             {
                 return "Error while calculating";
             }
+        }
+
+        private string GetCountOfSymbols()
+        {
+            return Text.LongCount().ToString();
         }
     }
 }
